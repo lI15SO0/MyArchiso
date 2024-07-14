@@ -1,0 +1,10 @@
+# Repeat Detect Shafiles
+new.sha
+old.sha
+
+# gnupg files
+fs/etc/pacman.d/gnupg
+
+# ssh keyring
+fs/root/.ssh/id_rsa
+fs/root/.ssh/id_rsa.pub

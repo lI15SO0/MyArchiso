@@ -1,0 +1,56 @@
+format = """
+$directory [:](bold) $username$hostname [:](bold) $localip $memory_usage$time
+$shell$character
+"""
+scan_timeout = 3
+
+right_format = """[<- ](bold 13)$all"""
+
+[character]
+success_symbol = "[->](bold 13)"
+error_symbol = "[~x](bold red)"
+vicmd_symbol = "[/>](bold 13)"
+
+[directory]
+style = "bold 13"
+read_only = "X "
+read_only_style = "bold #FFA500"
+truncation_symbol = "..|"
+format = "[$read_only]($read_only_style)[$path]($style)"
+
+[cmd_duration]
+min_time = 0
+show_milliseconds = true
+show_notifications = true
+min_time_to_notify = 6000
+
+[memory_usage]
+threshold = 0
+disabled = false
+style = "bold bright-cyan"
+format = "[mem $ram_pct]($style)"
+
+[localip]
+ssh_only = false
+disabled = false
+style = "bold 13"
+format = "[$localipv4]($style)"
+
+[hostname]
+ssh_only = false
+# ssh_symbol = ""
+format = "[$hostname](bold 13)"
+
+[username]
+style_root = "bold cyan"
+style_user = "bold 13"
+show_always = false
+format = "[$user]($style) @ "
+
+[shell]
+disabled = false
+
+[time]
+format = "[$time]($style)"
+time_format = "%v %T"
+disabled = false
